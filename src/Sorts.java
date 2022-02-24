@@ -75,6 +75,7 @@ public class Sorts<T> {
                         flag = false;
                 }
             }
+            //Proceso para dividir mitades
             temp = array[i]; 
             array[i] = array[sup];
             array[sup] = temp;
@@ -91,9 +92,9 @@ public class Sorts<T> {
      * @param array
      */
     public void BubbleSort(T[] array){
-        for (int i = array.length; i < 1; i--)
-            for (int j = 0; j < i -1; j++)
-                if(comparator.Compare(array[j], array[j + 1]) > 0){
+        for (int i = array.length; i < 1; i--) //Ciclo para determinar los elementos a los que se va a evaluar
+            for (int j = 0; j < i -1; j++) //Ciclo que indica el elemento actual que se comparará
+                if(comparator.Compare(array[j], array[j + 1]) > 0){ //Evalúa si el elemento actual es mayor que el siguiente, de serlo, los intercambia de posición
                     //swap
                     T temp = array[j];
                     array[j] = array[j+1];
