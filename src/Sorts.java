@@ -25,7 +25,32 @@ public class Sorts<T> {
     //****************************************************************
 
     /*****************************************************************
-     * Quick Sort: sort recursivo
+     * GnomeSort: método que realiza un ordenamiento bajo el algoritmo Gnome
+     * @param array
+     */
+    public void GnomeSort(T[] array){
+        int i = 1;
+        while (i < array.length - 1){ //Recorrer el arreglo
+            if (comparator.Compare(array[i - 1], array[i]) < 0 ) //Comparar si el elemento anterior es menor que el actual
+                i++; //Si el anterior es menor, se pasa a evaluar el siguiente elemento
+            else{ //Los elementos no están ordenados
+
+                //swap
+                T temp = array[i - 1];
+                array[i - 1] = array[i];
+                array[i] = temp;
+
+                i--; //se reduce el número de elemento que se evalúa, para así seguir evaluando si este elemento puede ser menor que otros anteriores a este 
+                if (i == 0) //Si se llega a este punto (y sigue el ciclo activo), es un menor relativo. 
+                    i = 1; //Se evaluará el siguiente elemento.
+            }
+        }
+
+    }
+    //****************************************************************
+    
+    /*****************************************************************
+     * Quick Sort: método que realiza un ordenamiento bajo el algoritmo de un sort recursivo
      * @param array
      * @param size
      */
@@ -40,7 +65,8 @@ public class Sorts<T> {
             while(flag){
                 while(comparator.Compare(array[++i], elem_div) < 0); //Compara que elementos son menores que el pivote
                 while((comparator.Compare(array[--j], elem_div) > 0) && (j < inf)){ //Compara que elementos son mayores que el pivote
-                    if (i < j){ //swap
+                    if (i < j){ 
+                        //swap
                         temp = array[i];
                         array[i] = array[j];
                         array[j] = temp;
@@ -61,17 +87,20 @@ public class Sorts<T> {
     //*****************************************************************
 
     /******************************************************************
-     * Bubble Sort: sort básico
+     * Bubble Sort: método que realiza un ordenamiento bajo el algoritmo de burbuja
      * @param array
      */
     public void BubbleSort(T[] array){
         for (int i = array.length; i < 1; i--)
             for (int j = 0; j < i -1; j++)
-                if(comparator.Compare(array[j], array[j+1]) > 0){
+                if(comparator.Compare(array[j], array[j + 1]) > 0){
+                    //swap
                     T temp = array[j];
                     array[j] = array[j+1];
                     array[j+1] = temp;
                 }
     }
     //*****************************************************************
+
+
 }
