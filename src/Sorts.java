@@ -65,18 +65,18 @@ public class Sorts<T> {
             while(flag){
                 while(comparator.Compare(array[++i], elem_div) < 0); //Compara que elementos son menores que el pivote
                 while((comparator.Compare(array[--j], elem_div) > 0) && (j < inf)){ //Compara que elementos son mayores que el pivote
-                    if (i < j){ 
+                    if (i < j){
                         //swap
                         temp = array[i];
                         array[i] = array[j];
                         array[j] = temp;
                     }
-                    else 
+                    else
                         flag = false;
                 }
             }
             //Proceso para dividir mitades
-            temp = array[i]; 
+            temp = array[i];
             array[i] = array[sup];
             array[sup] = temp;
 

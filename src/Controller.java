@@ -16,28 +16,11 @@ public class Controller{
         int numMenu;
         View miVista = new View();
         SortController ControlSort = new SortController();
-
         ControlSort.Filecreator();//Creacion del archivo
         miVista.Welcome(); //Despliegue el titulo del programa
         numMenu = -1;
         while(numMenu != 7){ //Despliega el menu principal
             numMenu = miVista.menu();
-            switch (numMenu) {
-                case 1: //Gnome sort
-
-                break;
-                case 2://Merge sort
-
-                break;
-                case 3: // Quick sort
-
-                break;
-                case 4: // Radix sort
-
-                break;
-                case 5: // Bubble sort
-
-                break;
                 case 6: // Salir
                 miVista.Exit();
                 break;
