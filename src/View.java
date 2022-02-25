@@ -6,7 +6,7 @@
  * @author Jose Pablo Kiesling, Fabian Juarez y Sara Echeverria
  * @version: 
         - Creacion: 23/02/2022
-        - Ultima modificacion: 
+        - Ultima modificacion: 25/02/2022
     Clase que tiene como fin ser un sistema I/O para la manipulacion del programa
  */
 
@@ -92,5 +92,5 @@ public class View{
         System.exit(0);
         scan.close();
     }
-        //****************************************************************
+    //****************************************************************
 }

@@ -75,8 +75,10 @@ public class SortController{
 
     /*****************************************************************
 	 * Sort: segun la opcion que se le indique, realizara el sort
+     * @throws FileNotFoundException
      */
-    public void Sort(int opcion){
+    public void Sort(int opcion) throws FileNotFoundException{
+        read();
         switch (opcion) {
             case 1: //Gnome sort
                 sort.GnomeSort(array);

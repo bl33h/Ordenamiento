@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+
 /**
  * Copyright (C), 2022-2023, The_Kiesling FabianJuarez SaraEcheverria
  * FileName: Controller
@@ -11,15 +13,17 @@
  */
 
 public class Controller{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         int numMenu;
         View miVista = new View();
         SortController ControlSort = new SortController();
+    
         ControlSort.Filecreator();//Creacion del archivo
         miVista.Welcome(); //Despliegue el titulo del programa
         numMenu = -1;
         while(numMenu != 6){ //Despliega el menu principal
+            numMenu = miVista.menu();
             if (numMenu < 6)
                 ControlSort.Sort(numMenu);
             else

@@ -24,10 +24,8 @@ public class Comparator implements IComparator{
 
         if(num1.compareTo(num2) > 0)
             return 1;
-        else if (num1.compareTo(num2) < 0)
+        else 
             return -1;
-        else
-            return 1;
     }
     //****************************************************************
 }

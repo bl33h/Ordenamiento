@@ -169,11 +169,12 @@ public class Sorts<T> {
 
     }
     //*****************************************************************
+
     /******************************************************************
     * metodo privado que hace la funcion de merge a las mitades del array obtenidas en sort
     * @param array
     * @param inicio
-    *@param mid
+    * @param mid
     * @param fin
     */
     private void merge(T[] array, int inicio, int mid, int fin)
