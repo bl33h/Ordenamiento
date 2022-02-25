@@ -14,12 +14,14 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Random;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class SortController{
     //---------------------------PROPIEDADES--------------------------
     Comparator comparator = new Comparator();
     Sorts sort = new Sorts(comparator);
-    int size = 3000; //Tamanio variable para las pruebas en Visual VM
+    int size = 3000; // Tamanio variable para las pruebas en Visual VM
     Integer[] array = new Integer[size];
 
     //---------------------------METODOS------------------------------
@@ -49,6 +51,29 @@ public class SortController{
     //****************************************************************
 
     /*****************************************************************
+	 * FileReader: Lee el archivo.
+     */
+    private boolean read() throws FileNotFoundException{
+        boolean read = false;
+        try{
+            read = true;
+            File file = new File("datos.txt");
+            Scanner reader = new Scanner(file);
+            int i = 0;
+            while(reader.hasNextLine() && i<size){
+                array[i] = (Integer) (reader.nextLine());
+                i++;
+            }
+            reader.close();
+        }catch(FileNotFoundException e){
+            String s = "SortController.read:" + e.getMessage();
+            throw new FileNotFoundException(s);
+        }
+        return read;
+    }
+    //****************************************************************
+
+    /*****************************************************************
 	 * Sort: segun la opcion que se le indique, realizara el sort
      */
     public void Sort(int opcion){
@@ -63,7 +88,7 @@ public class SortController{
                 sort.QuickSort(array, 1, size);
             break;
             case 4: // Radix sort
-                sort.RadixSort(array);
+                sort.RadixSort((Integer)array);
             break;
             case 5: // Bubble sort
                 sort.BubbleSort(array);
