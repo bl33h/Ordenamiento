@@ -20,12 +20,10 @@ public class Controller{
         miVista.Welcome(); //Despliegue el titulo del programa
         numMenu = -1;
         while(numMenu != 7){ //Despliega el menu principal
-            numMenu = miVista.menu();
-                case 6: // Salir
-                miVista.Exit();
-                break;
-
-            }
+            if (numMenu < 6)
+                ControlSort.Sort(numMenu);
+            else
+                miVista.Exit();  
         }
     }
 }

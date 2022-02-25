@@ -19,11 +19,13 @@ public class SortController{
     //---------------------------PROPIEDADES--------------------------
     Comparator comparator = new Comparator();
     Sorts sort = new Sorts(comparator);
+    int size = 3000; //Tamaño variable para las pruebas en Visual VM
+    Integer[] array = new Integer[size];
 
     //---------------------------MÉTODOS------------------------------
     /*****************************************************************
 	 * Creara el archivo donde iran los 3000 numeros
-     **/
+     */
     public void Filecreator(){
         try {
             String ruta = "datos.txt";
@@ -36,7 +38,7 @@ public class SortController{
             }
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            for(int i=0; i <=3000;i ++)
+            for(int i=0; i <= size ;i ++)
                 contenido += rand.nextInt(10000 + 0) + 0 + "\n";
             bw.write(contenido);
             bw.close();
@@ -44,26 +46,29 @@ public class SortController{
             e.printStackTrace();
         }
     }
+    //****************************************************************
+
     /*****************************************************************
-	 * Creara el archivo donde iran los 3000 numeros
-     **/
+	 * Sort: según la opción que se le indique, realizará el sort
+     */
     public void Sort(int opcion){
         switch (opcion) {
             case 1: //Gnome sort
-
+                sort.GnomeSort();
             break;
             case 2://Merge sort
-
+                sort.MergeSort();
             break;
             case 3: // Quick sort
-
+                sort.QuickSort(array, 1, size);
             break;
             case 4: // Radix sort
-
+                sort.RadixSort();
             break;
             case 5: // Bubble sort
-
+                sort.BubbleSort(array);
             break;
         }
     }
+    //****************************************************************
 }
