@@ -29,7 +29,7 @@ public class View{
 	 * Mostrara un mensaje en pantalla de bienvenida para el usuario
 	 */
     public void Welcome(){
-        System.out.println("------------- Bienvenido/bienvenida a su radio ---------------- "); // Titulo
+        System.out.println("------------- Bienvenido/bienvenida a su programa de ordenamiento ---------------- "); // Titulo
     }
     //****************************************************************
 

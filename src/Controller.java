@@ -15,8 +15,9 @@ public class Controller{
 
         int numMenu;
         View miVista = new View();
+        SortController ControlSort = new SortController();
 
-
+        ControlSort.Filecreator();//Creacion del archivo
         miVista.Welcome(); //Despliegue el titulo del programa
         numMenu = -1;
         while(numMenu != 7){ //Despliega el menu principal

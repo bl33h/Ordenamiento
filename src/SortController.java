@@ -13,27 +13,31 @@
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Random;
 
 public class SortController {
-    
-    public void Filecreator(){
+
     /*****************************************************************
-	 * Creara el archivo donde iran los 1000 numeros
+	 * Creara el archivo donde iran los 3000 numeros
      **/
-    try {
-        String ruta = "datos.txt";
-        String contenido = "Contenido de ejemplo";
-        File file = new File(ruta);
-        // Si el archivo no existe es creado
-        if (!file.exists()) {
-            file.createNewFile();
+    public void Filecreator(){
+        try {
+            String ruta = "datos.txt";
+            Random rand = new Random();
+            String contenido = "";
+            File file = new File(ruta);
+            // Si el archivo no existe es creado
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            for(int i=0; i <=3000;i ++)
+                contenido += rand.nextInt(10000 + 0) + 0 + "\n";
+            bw.write(contenido);
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        FileWriter fw = new FileWriter(file);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(contenido);
-        bw.close();
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
     }
 }
