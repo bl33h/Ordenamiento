@@ -57,13 +57,13 @@ public class SortController{
                 sort.GnomeSort(array);
             break;
             case 2://Merge sort
-                sort.MergeSort();
+                sort.MergeSort(array, 1 ,size);
             break;
             case 3: // Quick sort
                 sort.QuickSort(array, 1, size);
             break;
             case 4: // Radix sort
-                sort.RadixSort();
+                sort.RadixSort(array);
             break;
             case 5: // Bubble sort
                 sort.BubbleSort(array);

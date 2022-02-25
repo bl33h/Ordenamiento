@@ -4,15 +4,15 @@
  * Author:   Fabian Juarez , Sara Echeverria , Jose Pablo Kiesling
  * Date:     4/03/2022
  * @author Jose Pablo Kiesling, Fabian Juarez y Sara Echeverria
- * @version: 
+ * @version:
         - Creacion: 23/02/2022
-        - Ultima modificacion: 
- 
+        - Ultima modificacion:
+
     Clase que tendra todos los sorts y permitira ordenar los elementos genericos
  */
 
 public class Sorts<T> {
-    
+
     private IComparator comparator;
 
     /*****************************************************************
@@ -166,7 +166,7 @@ public class Sorts<T> {
 
         // Comparar cada indice de los subgrupos, se agrega el valor mas bajo
         while (LIndex < LArray.length && RIndex < RArray.length)
-        {   
+        {
             if(comparator.Compare(LArray[LIndex], RArray[RIndex]) <= 0){
                 array[currentIndex] = LArray[LIndex];
                 LIndex++;
