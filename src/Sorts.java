@@ -88,19 +88,45 @@ public class Sorts<T> {
     //*****************************************************************
 
     /******************************************************************
-     * Radix Sort: metodo que realiza un ordenamiento bajo el algoritmo de burbuja
+     * Radix Sort: metodo que realiza un ordenamiento bajo el algoritmo de radix
      * @param array
      */
-    public void RadixSort(T[] array){
-        T max = array[0];
-        int m;
-        for(int i =1; i<array.length;i++){
+    public void RadixSort(int array[]){
+        int max = array[0];
+        for(int i = 1; i<array.length;i++){
             if(comparator.Compare(array[i],max) > 0){
                 max = array[i];
             }
         }
-        for(int exp = 1; max/exp > 0; exp *= 10){
-
+        for(int place = 1; max/place > 0; place *= 10){
+            countingSort(array,array.length,place);
+        }
+    }
+    //*****************************************************************
+        /******************************************************************
+    * counting Sort: metodo privado que hace la funcion de counting
+    * @param array
+    * @param lenght
+    * @param place
+    */
+    private void countingSort(int arr[], int lenght, int place) {
+        int output[] = new int[lenght];
+        int count[] = new int[10];
+        for (int i = 0; i < 10; ++i){
+            count[i] = 0;
+        }
+        for (int i = 0; i < lenght; i++){
+            count[(arr[i] / place) % 10]++;
+        }
+        for (int i = 1; i < 10; i++){
+            count[i] += count[i - 1];
+        }
+        for (int i = lenght - 1; i >= 0; i--) {
+            output[count[(arr[i] / place) % 10] - 1] = arr[i];
+            count[(arr[i] / place) % 10]--;
+        }
+        for (int i = 0; i < lenght; i++){
+            arr[i] = output[i];
         }
     }
     //*****************************************************************
@@ -125,6 +151,7 @@ public class Sorts<T> {
      * Merge Sort: metodo que realiza un ordenamiento bajo el algoritmo de Merge
      * @param array
      * @param size
+     * @param fin
      */
     public void MergeSort(T[] array, int inicio, int fin){
         // A
@@ -141,8 +168,14 @@ public class Sorts<T> {
         }
 
     }
-
-    // metodo privado que hace la funcion de merge a las mitades del array obtenidas en sort
+    //*****************************************************************
+    /******************************************************************
+    * metodo privado que hace la funcion de merge a las mitades del array obtenidas en sort
+    * @param array
+    * @param inicio
+    *@param mid
+    * @param fin
+    */
     private void merge(T[] array, int inicio, int mid, int fin)
     {
         T[] LArray  = (T[]) new Comparable[mid - inicio + 1];
@@ -185,4 +218,5 @@ public class Sorts<T> {
         // Elementos restantes/sobrantes subgrupo 2
         while (RIndex < RArray.length) array[currentIndex++] = RArray[RIndex++];
     }
+    //*****************************************************************
 }
