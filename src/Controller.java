@@ -19,11 +19,11 @@ public class Controller{
         ControlSort.Filecreator();//Creacion del archivo
         miVista.Welcome(); //Despliegue el titulo del programa
         numMenu = -1;
-        while(numMenu != 7){ //Despliega el menu principal
+        while(numMenu != 6){ //Despliega el menu principal
             if (numMenu < 6)
                 ControlSort.Sort(numMenu);
             else
-                miVista.Exit();  
+                miVista.Exit();
         }
     }
 }

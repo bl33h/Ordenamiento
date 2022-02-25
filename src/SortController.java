@@ -54,7 +54,7 @@ public class SortController{
     public void Sort(int opcion){
         switch (opcion) {
             case 1: //Gnome sort
-                sort.GnomeSort();
+                sort.GnomeSort(array);
             break;
             case 2://Merge sort
                 sort.MergeSort();
