@@ -51,6 +51,29 @@ public class SortController{
     //****************************************************************
 
     /*****************************************************************
+	 * Creara el archivo donde iran los 3000 numeros
+     */
+    public void Filewrite(){
+        try {
+            String ruta = "datos.txt";
+            String contenido = "";
+            File file = new File(ruta);
+            // Si el archivo no existe es creado
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            for(int i=0; i <= size ;i ++)
+                contenido += array[i]+ "\n";
+            bw.write(contenido);
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*****************************************************************
 	 * FileReader: Lee el archivo.
      */
     private boolean read() throws FileNotFoundException{
@@ -96,6 +119,7 @@ public class SortController{
                 sort.BubbleSort(array);
             break;
         }
+        Filewrite();
     }
     //****************************************************************
 }
