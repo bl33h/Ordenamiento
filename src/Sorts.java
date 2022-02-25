@@ -80,7 +80,7 @@ public class Sorts<T> {
             array[i] = array[sup];
             array[sup] = temp;
 
-            //--- RECURSIÓN ---
+            //--- RECURSION ---
             QuickSort(array, inf, i-1);
             QuickSort(array, i + 1, sup);
         }
@@ -88,7 +88,7 @@ public class Sorts<T> {
     //*****************************************************************
 
     /******************************************************************
-     * Radix Sort: método que realiza un ordenamiento bajo el algoritmo de burbuja
+     * Radix Sort: metodo que realiza un ordenamiento bajo el algoritmo de burbuja
      * @param array
      */
     public void RadixSort(T[] array){
