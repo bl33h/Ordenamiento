@@ -88,6 +88,24 @@ public class Sorts<T> {
     //*****************************************************************
 
     /******************************************************************
+     * Radix Sort: método que realiza un ordenamiento bajo el algoritmo de burbuja
+     * @param array
+     */
+    public void RadixSort(T[] array){
+        T max = array[0];
+        int m;
+        for(int i =1; i<array.length;i++){
+            if(comparator.Compare(array[i],max) > 0){
+                max = array[i];
+            }
+        }
+        for(int exp = 1; max/exp > 0; exp *= 10){
+
+        }
+    }
+    //*****************************************************************
+
+    /******************************************************************
      * Bubble Sort: metodo que realiza un ordenamiento bajo el algoritmo de burbuja
      * @param array
      */
@@ -119,9 +137,9 @@ public class Sorts<T> {
 
         //
         for (int i = 0; i < g1; ++i)
-            L[i] = arr[left + i];
+            L[i] = array[left + i];
         for (int j = 0; j < g2; ++j)
-            R[j] = arr[mid + 1 + j];
+            R[j] = array[mid + 1 + j];
 
         /* Union de los temporales */
         int i = 0, j = 0;
@@ -130,25 +148,25 @@ public class Sorts<T> {
         int k = left;
         while (i < g1 && j < g2) {
             if (L[i] <= R[j]) {
-                arr[k] = L[i];
+                array[k] = L[i];
                 i++;
             }
             else {
-                arr[k] = R[j];
+                array[k] = R[j];
                 j++;
             }
             k++;
         }
         /* Sobrantes del extremo de la izquierda (left) */
         while (i < g1) {
-            arr[k] = L[i];
+            array[k] = L[i];
             i++;
             k++;
         }
   
         /* Sobrantes del extremo de la derecha (right) */
         while (j < g2) {
-            arr[k] = R[j];
+            array[k] = R[j];
             j++;
             k++;
         }
