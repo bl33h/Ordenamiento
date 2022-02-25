@@ -91,7 +91,7 @@ public class Sorts<T> {
      * Radix Sort: metodo que realiza un ordenamiento bajo el algoritmo de radix
      * @param array
      */
-    public void RadixSort(int array[]){
+    public void RadixSort(Integer array[]){
         int max = array[0];
         for(int i = 1; i<array.length;i++){
             if(comparator.Compare(array[i],max) > 0){
@@ -109,7 +109,7 @@ public class Sorts<T> {
     * @param lenght
     * @param place
     */
-    private void countingSort(int arr[], int lenght, int place) {
+    private void countingSort(Integer arr[], int lenght, int place) {
         int output[] = new int[lenght];
         int count[] = new int[10];
         for (int i = 0; i < 10; ++i){

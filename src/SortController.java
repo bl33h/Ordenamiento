@@ -61,7 +61,7 @@ public class SortController{
             Scanner reader = new Scanner(file);
             int i = 0;
             while(reader.hasNextLine() && i<size){
-                array[i] = (Integer) (reader.nextLine());
+                array[i] = Integer.parseInt(reader.nextLine());
                 i++;
             }
             reader.close();
@@ -88,7 +88,7 @@ public class SortController{
                 sort.QuickSort(array, 1, size);
             break;
             case 4: // Radix sort
-                sort.RadixSort((Integer)array);
+                sort.RadixSort(array);
             break;
             case 5: // Bubble sort
                 sort.BubbleSort(array);
