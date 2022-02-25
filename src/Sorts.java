@@ -126,61 +126,19 @@ public class Sorts<T> {
      * @param array
      * @param size
      */
-    public void MergeSort(T[] array, int left, int right, int mid){
-        // Subgrupos del arreglo, casos n = par y n = impar
-        int g1 = mid - left + 1;
-        int g2 = right - mid;
+    public void MergeSort(T[] array, int inicio, int fin){
+        // A
+        if (inicio < fin)
+        {
+            // Encontrar el punto medio
+            int mid = (inicio + fin) / 2;
 
-        // Grupos temporales extremos
-        int L[] = new int [g1];
-        int R[] = new int [g2];
+            mergeSort(array, inicio, mid); // Sort extremo 1
+            mergeSort(array, mid + 1, fin);  // Sort extremo 2
 
-        //
-        for (int i = 0; i < g1; ++i)
-            L[i] = array[left + i];
-        for (int j = 0; j < g2; ++j)
-            R[j] = array[mid + 1 + j];
-
-        /* Union de los temporales */
-        int i = 0, j = 0;
-  
-        // Indice inicial de la union de los temporales
-        int k = left;
-        while (i < g1 && j < g2) {
-            if (L[i] <= R[j]) {
-                array[k] = L[i];
-                i++;
-            }
-            else {
-                array[k] = R[j];
-                j++;
-            }
-            k++;
-        }
-        /* Sobrantes del extremo de la izquierda (left) */
-        while (i < g1) {
-            array[k] = L[i];
-            i++;
-            k++;
-        }
-  
-        /* Sobrantes del extremo de la derecha (right) */
-        while (j < g2) {
-            array[k] = R[j];
-            j++;
-            k++;
+            // Merge ambos extremos
+            merge(array, inicio, mid, fin);
         }
 
-        if (left < right) {
-            // Proceso para encontrar el punto medio
-            int m = left + (right-left)/2;
-  
-            // Funcion sort 
-            sort(array, left, mid);
-            sort(array, m + 1, right);
-  
-            // Funcion merge de los sorts
-            merge(array, left, m, right);
-        }
     }
 }
