@@ -121,7 +121,7 @@ public class Sorts<T> {
     }
     //*****************************************************************
 
-    /***********************
+    /******************************************************************
      * Merge Sort: metodo que realiza un ordenamiento bajo el algoritmo de Merge
      * @param array
      * @param size
@@ -133,12 +133,56 @@ public class Sorts<T> {
             // Encontrar el punto medio
             int mid = (inicio + fin) / 2;
 
-            mergeSort(array, inicio, mid); // Sort extremo 1
-            mergeSort(array, mid + 1, fin);  // Sort extremo 2
+            MergeSort(array, inicio, mid); // Sort extremo 1
+            MergeSort(array, mid + 1, fin);  // Sort extremo 2
 
             // Merge ambos extremos
             merge(array, inicio, mid, fin);
         }
 
+    }
+
+    // metodo privado que hace la funcion de merge a las mitades del array obtenidas en sort
+    private void merge(T[] array, int inicio, int mid, int fin)
+    {
+        T[] LArray  = (T[]) new Comparable[mid - inicio + 1];
+        T[] RArray = (T[]) new Comparable[fin - mid];
+
+        // Relleno extremo 1
+        for (int i = 0; i < LArray.length; ++i)
+            LArray[i] = array[inicio + i];
+
+        // Relleno extremo 2
+        for (int i = 0; i < RArray.length; ++i)
+            RArray[i] = array[mid+ 1 + i];
+
+        /* Funcion merge a los subgrupos temporales */
+
+        // Indices iniciales
+        int LIndex = 0, RIndex = 0;
+
+        // Indice donde agregar subgrupos al array inicial
+        int currentIndex = inicio;
+
+        // Comparar cada indice de los subgrupos, se agrega el valor mas bajo
+        while (LIndex < LArray.length && RIndex < RArray.length)
+        {   
+            if(comparator.Compare(LArray[LIndex], RArray[RIndex]) <= 0){
+                array[currentIndex] = LArray[LIndex];
+                LIndex++;
+            }
+            else
+            {
+                array[currentIndex] = RArray[RIndex];
+                RIndex++;
+            }
+            currentIndex++;
+        }
+
+        // Elementos restantes/sobrantes subgrupo 1
+        while (LIndex < LArray.length) array[currentIndex++] = LArray[LIndex++];
+
+        // Elementos restantes/sobrantes subgrupo 2
+        while (RIndex < RArray.length) array[currentIndex++] = RArray[RIndex++];
     }
 }
