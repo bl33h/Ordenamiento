@@ -1,22 +1,22 @@
 /**
  * Copyright (C), 2022-2023, The_Kiesling FabianJuarez SaraEcheverria
  * FileName: Controller
- * Author:   Fabián Juárez , Sara Echeverria , José Pablo Kiesling
+ * Author:   Fabian Juarez , Sara Echeverria , Jose Pablo Kiesling
  * Date:     4/03/2022
- * @author José Pablo Kiesling, Fabian Juarez y Sara Echeverria
+ * @author Jose Pablo Kiesling, Fabian Juarez y Sara Echeverria
  * @version:
-        - Creación: 25/02/2022
-        - Última modificación:
+        - Creacion: 25/02/2022
+        - Ultima modificacion:
     Clase que comunica el modelo con la vista y controla sus acciones
  */
 
 public class Comparator implements IComparator{
 
     /*****************************************************************
-	 * Compara dos objetos genéricos y devuelve un entero que dice cuál es mayor
+	 * Compara dos objetos genericos y devuelve un entero que dice cual es mayor
 	 * Si es 1, el primero es mayor; si es -1, el segundo es mayor; si es 0, ambos son iguales
 	 * @param objetos a comparar
-	 * @return entero que indica cuál es mayor
+	 * @return entero que indica cual es mayor
 	 */
     public int Compare(Object _object1, Object _object2) {
         Integer num1 = (Integer)_object1;

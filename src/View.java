@@ -1,13 +1,13 @@
 /**
  * Copyright (C), 2022-2023, The_Kiesling FabianJuarez SaraEcheverria 
  * FileName: View
- * Author:   Fabián Juárez , Sara Echeverria , José Pablo Kiesling
+ * Author:   Fabian Juarez , Sara Echeverria , Jose Pablo Kiesling
  * Date:     4/03/2022
- * @author José Pablo Kiesling, Fabian Juarez y Sara Echeverria
+ * @author Jose Pablo Kiesling, Fabian Juarez y Sara Echeverria
  * @version: 
-        - Creación: 23/02/2022
-        - Última modificación: 
-    Clase que tiene como fin ser un sistema I/O para la manipulación del programa
+        - Creacion: 23/02/2022
+        - Ultima modificacion: 
+    Clase que tiene como fin ser un sistema I/O para la manipulacion del programa
  */
 
 import java.util.Scanner;
@@ -16,7 +16,7 @@ public class View{
     //---------------------------PROPIEDADES--------------------------
     private Scanner scan; //Scanner
 
-    //---------------------------MÉTODOS------------------------------
+    //---------------------------METODOS------------------------------
     /*****************************************************************
 	 * Constructor de la clase View que instancia el Scanner
 	 */

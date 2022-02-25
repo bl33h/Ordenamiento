@@ -1,14 +1,14 @@
 /**
  * Copyright (C), 2022-2023, The_Kiesling FabianJuarez SaraEcheverria
  * FileName: SortController
- * Author:   Fabián Juárez , Sara Echeverria , José Pablo Kiesling
+ * Author:   Fabian Juarez , Sara Echeverria , Jose Pablo Kiesling
  * Date:     4/03/2022
- * @author José Pablo Kiesling, Fabian Juarez y Sara Echeverria
+ * @author Jose Pablo Kiesling, Fabian Juarez y Sara Echeverria
  * @version:
-        - Creación: 23/02/2022
-        - Última modificación:
+        - Creacion: 23/02/2022
+        - Ultima modificacion:
 
-    Clase que controlará al modelo, y permitirá que funcione de la manera esperada.
+    Clase que controlara al modelo, y permitira que funcione de la manera esperada.
  */
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,10 +19,10 @@ public class SortController{
     //---------------------------PROPIEDADES--------------------------
     Comparator comparator = new Comparator();
     Sorts sort = new Sorts(comparator);
-    int size = 3000; //Tamaño variable para las pruebas en Visual VM
+    int size = 3000; //Tamanio variable para las pruebas en Visual VM
     Integer[] array = new Integer[size];
 
-    //---------------------------MÉTODOS------------------------------
+    //---------------------------METODOS------------------------------
     /*****************************************************************
 	 * Creara el archivo donde iran los 3000 numeros
      */
@@ -49,7 +49,7 @@ public class SortController{
     //****************************************************************
 
     /*****************************************************************
-	 * Sort: según la opción que se le indique, realizará el sort
+	 * Sort: segun la opcion que se le indique, realizara el sort
      */
     public void Sort(int opcion){
         switch (opcion) {
