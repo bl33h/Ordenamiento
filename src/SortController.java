@@ -111,11 +111,7 @@ public class SortController{
                 sort.MergeSort(array, 0 ,size-1);
             break;
             case 3: // Quick sort
-            {
-                System.out.println(size-1);
-                sort.QuickSort(array, 0, 2999);
-
-            }
+                sort.QuickSort(array, 0, 2999);        
             break;
             case 4: // Radix sort
                 sort.RadixSort(array);
