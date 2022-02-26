@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
  * @author Jose Pablo Kiesling, Fabian Juarez y Sara Echeverria
  * @version:
         - Creacion: 23/02/2022
-        - Ultima modificacion:
+        - Ultima modificacion: 25/02/2022
     Clase que comunica el modelo con la vista y controla sus acciones
  */
 

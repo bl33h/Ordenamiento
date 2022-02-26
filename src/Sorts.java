@@ -6,7 +6,7 @@
  * @author Jose Pablo Kiesling, Fabian Juarez y Sara Echeverria
  * @version:
         - Creacion: 23/02/2022
-        - Ultima modificacion:
+        - Ultima modificacion: 25/02/2022
 
     Clase que tendra todos los sorts y permitira ordenar los elementos genericos
  */
@@ -28,21 +28,21 @@ public class Sorts<T> {
      * GnomeSort: metodo que realiza un ordenamiento bajo el algoritmo Gnome
      * @param array
      */
-    public void GnomeSort(T[] array){
-        int i = 1;
-        while (i < array.length - 1){ //Recorrer el arreglo
-            if (comparator.Compare(array[i - 1], array[i]) < 0 ) // Comparar si el elemento anterior es menor que el actual
+    public void GnomeSort(T[] array){    
+        int i = 0;
+        while (i < array.length){ //Recorrer el arreglo
+            if (i == 0) //Si se llega a este punto (y sigue el ciclo activo), es un menor relativo. 
+                    i++; // Se evaluara el siguiente elemento.
+            if (comparator.Compare(array[i], array[i - 1]) >= 0 ) // Comparar si el elemento anterior es menor que el actual
                 i++; // Si el anterior es menor, se pasa a evaluar el siguiente elemento
             else{ // Los elementos no estan ordenados
-
+                T temp = null;
                 //swap
-                T temp = array[i - 1];
-                array[i - 1] = array[i];
-                array[i] = temp;
+                temp = array[i];
+                array[i] = array[i - 1];
+                array[i - 1] = temp;
 
-                i--; //se reduce el numero de elemento que se evalua, para asa seguir evaluando si este elemento puede ser menor que otros anteriores a este 
-                if (i == 0) //Si se llega a este punto (y sigue el ciclo activo), es un menor relativo. 
-                    i = 1; // Se evaluara el siguiente elemento.
+                i--; //se reduce el numero de elemento que se evalua, para asa seguir evaluando si este elemento puede ser menor que otros anteriores a este  
             }
         }
 
@@ -55,6 +55,38 @@ public class Sorts<T> {
      * @param size
      */
     public void QuickSort(T[] array, int inf, int sup){
+       int i = inf - 1;
+	   int j = sup;
+	   boolean flag = true;
+	   T temp;
+	   
+	   
+	   if (inf >= sup) {
+		   return;
+	   }
+	   
+	   T elem_div = array[sup];
+	   
+	   
+	   while (flag) {
+		   while(comparator.Compare(array[++i], elem_div) < 0); //Move the index i until it finds an element bigger than elem_div
+		   while((comparator.Compare(array[--j], elem_div) > 0)  && (j > inf)); //Move the index j until it finds element smaller than elem_div
+		   
+		   if (i < j) {
+			   temp = array[i];
+			   array[i] = array[j];
+			   array[j] = temp;
+		   } else {
+			   flag = false;
+		   }
+	   }
+	   
+	   temp = array[i];
+	   array[i] = array[sup];
+	   array[sup] = temp;
+	   QuickSort(array, inf, i - 1);
+	   QuickSort(array, i + 1, sup);
+       /*
         if (inf >= sup) 
             return;
         
@@ -63,7 +95,7 @@ public class Sorts<T> {
         boolean flag = true;
         T temp;
 
-        T elem_div = array[sup]; /* elemento pivote */
+        T elem_div = array[sup]; // elemento pivote 
 
         while(flag){
             while(comparator.Compare(array[++i], elem_div) < 0); // Compara que elementos son menores que el pivote
@@ -85,6 +117,7 @@ public class Sorts<T> {
         //--- RECURSION ---
         QuickSort(array, inf, i - 1);
         QuickSort(array, i + 1, sup);
+        */
     }
     //*****************************************************************
 
