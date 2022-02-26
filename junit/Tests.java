@@ -1,4 +1,5 @@
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class Tests {
     Integer[] array; 
@@ -24,19 +25,19 @@ public class Tests {
         array = new Integer[5];
         unsortODD();
         sort.GnomeSort(array);
-        assertEquals(1, array[0]);
-        assertEquals(3, array[1]);
-        assertEquals(5, array[2]);
-        assertEquals(6, array[3]);
-        assertEquals(8, array[4]);
+        assertEquals((Integer) 1, array[0]);
+        assertEquals((Integer) 3, array[1]);
+        assertEquals((Integer) 5, array[2]);
+        assertEquals((Integer) 6, array[3]);
+        assertEquals((Integer) 8, array[4]);
 
         array = new Integer[4];
         unsortEVEN();
         sort.GnomeSort(array);
-        assertEquals(1, array[0]);
-        assertEquals(3, array[1]);
-        assertEquals(5, array[2]);
-        assertEquals(6, array[3]);
+        assertEquals((Integer) 1, array[0]);
+        assertEquals((Integer) 3, array[1]);
+        assertEquals((Integer) 5, array[2]);
+        assertEquals((Integer) 6, array[3]);
     }
 
     @Test
@@ -44,59 +45,59 @@ public class Tests {
         array = new Integer[5];
         unsortODD();
         sort.BubbleSort(array);
-        assertEquals(1, array[0]);
-        assertEquals(3, array[1]);
-        assertEquals(5, array[2]);
-        assertEquals(6, array[3]);
-        assertEquals(8, array[4]);
+        assertEquals((Integer) 1, array[0]);
+        assertEquals((Integer) 3, array[1]);
+        assertEquals((Integer) 5, array[2]);
+        assertEquals((Integer) 6, array[3]);
+        assertEquals((Integer) 8, array[4]);
 
         array = new Integer[4];
         unsortEVEN();
         sort.BubbleSort(array);
-        assertEquals(1, array[0]);
-        assertEquals(3, array[1]);
-        assertEquals(5, array[2]);
-        assertEquals(6, array[3]);
+        assertEquals((Integer) 1, array[0]);
+        assertEquals((Integer) 3, array[1]);
+        assertEquals((Integer) 5, array[2]);
+        assertEquals((Integer) 6, array[3]);
     }
 
     @Test
     public void MergeSort(){
         array = new Integer[5];
         unsortODD();
-        sort.MergeSort(array, 1 , 4);
-        assertEquals(1, array[0]);
-        assertEquals(3, array[1]);
-        assertEquals(5, array[2]);
-        assertEquals(6, array[3]);
-        assertEquals(8, array[4]);
+        sort.MergeSort(array, 0 , 4);
+        assertEquals((Integer) 1, array[0]);
+        assertEquals((Integer) 3, array[1]);
+        assertEquals((Integer) 5, array[2]);
+        assertEquals((Integer) 6, array[3]);
+        assertEquals((Integer) 8, array[4]);
 
         array = new Integer[4];
         unsortEVEN();
-        sort.MergeSort(array, 1 , 3);
-        assertEquals(1, array[0]);
-        assertEquals(3, array[1]);
-        assertEquals(5, array[2]);
-        assertEquals(6, array[3]);
+        sort.MergeSort(array, 0 , 3);
+        assertEquals((Integer) 1, array[0]);
+        assertEquals((Integer) 3, array[1]);
+        assertEquals((Integer) 5, array[2]);
+        assertEquals((Integer) 6, array[3]);
     }
 
     @Test
     public void QuickSort(){
         array = new Integer[5];
         unsortODD();
-        sort.QuickSort(array, 1 , 4);
-        assertEquals(1, array[0]);
-        assertEquals(3, array[1]);
-        assertEquals(5, array[2]);
-        assertEquals(6, array[3]);
-        assertEquals(8, array[4]);
+        sort.QuickSort(array, 0 , 4);
+        assertEquals((Integer) 1, array[0]);
+        assertEquals((Integer) 3, array[1]);
+        assertEquals((Integer) 5, array[2]);
+        assertEquals((Integer) 6, array[3]);
+        assertEquals((Integer) 8, array[4]);
 
         array = new Integer[4];
         unsortEVEN();
-        sort.QuickSort(array, 1 , 3);
-        assertEquals(1, array[0]);
-        assertEquals(3, array[1]);
-        assertEquals(5, array[2]);
-        assertEquals(6, array[3]);
+        sort.QuickSort(array, 0 , 3);
+        assertEquals((Integer) 1, array[0]);
+        assertEquals((Integer) 3, array[1]);
+        assertEquals((Integer) 5, array[2]);
+        assertEquals((Integer) 6, array[3]);
     }
 
     @Test
@@ -104,19 +105,19 @@ public class Tests {
         array = new Integer[5];
         unsortODD();
         sort.RadixSort(array);
-        assertEquals(1, array[0]);
-        assertEquals(3, array[1]);
-        assertEquals(5, array[2]);
-        assertEquals(6, array[3]);
-        assertEquals(8, array[4]);
+        assertEquals((Integer) 1, array[0]);
+        assertEquals((Integer) 3, array[1]);
+        assertEquals((Integer) 5, array[2]);
+        assertEquals((Integer) 6, array[3]);
+        assertEquals((Integer) 8, array[4]);
 
         array = new Integer[4];
         unsortEVEN();
         sort.RadixSort(array);
-        assertEquals(1, array[0]);
-        assertEquals(3, array[1]);
-        assertEquals(5, array[2]);
-        assertEquals(6, array[3]);
+        assertEquals((Integer) 1, array[0]);
+        assertEquals((Integer) 3, array[1]);
+        assertEquals((Integer) 5, array[2]);
+        assertEquals((Integer) 6, array[3]);
     }
 
 
