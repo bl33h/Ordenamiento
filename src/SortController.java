@@ -64,7 +64,7 @@ public class SortController{
             }
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            for(int i=0; i <= size ;i ++)
+            for(int i=0; i < size ;i ++)
                 contenido += array[i]+ "\n";
             bw.write(contenido);
             bw.close();
@@ -101,16 +101,17 @@ public class SortController{
      * @throws FileNotFoundException
      */
     public void Sort(int opcion) throws FileNotFoundException{
+        Filecreator();
         read();
         switch (opcion) {
             case 1: //Gnome sort
                 sort.GnomeSort(array);
             break;
             case 2://Merge sort
-                sort.MergeSort(array, 1 ,size);
+                sort.MergeSort(array, 1 ,size-1);
             break;
             case 3: // Quick sort
-                sort.QuickSort(array, 1, size);
+                sort.QuickSort(array, 1, 2999);
             break;
             case 4: // Radix sort
                 sort.RadixSort(array);

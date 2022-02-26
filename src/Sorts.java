@@ -55,35 +55,36 @@ public class Sorts<T> {
      * @param size
      */
     public void QuickSort(T[] array, int inf, int sup){
-        if (inf >= sup) //Caso trivial
-            return ;
-        else{ //Salto de fe
-            int i = inf - 1, j = sup;
-            boolean flag = true;
-            T elem_div = array[sup] /* elemento pivote */ , temp;
+        if (inf >= sup) 
+            return;
+        
+        int i = inf - 1;
+        int j = sup;
+        boolean flag = true;
+        T temp;
 
-            while(flag){
-                while(comparator.Compare(array[++i], elem_div) < 0); // Compara que elementos son menores que el pivote
-                while((comparator.Compare(array[--j], elem_div) > 0) && (j < inf)){ // Compara que elementos son mayores que el pivote
-                    if (i < j){
-                        //swap
-                        temp = array[i];
-                        array[i] = array[j];
-                        array[j] = temp;
-                    }
-                    else
-                        flag = false;
-                }
+        T elem_div = array[sup]; /* elemento pivote */
+
+        while(flag){
+            while(comparator.Compare(array[++i], elem_div) < 0); // Compara que elementos son menores que el pivote
+            while((comparator.Compare(array[--j], elem_div) > 0)  && (j > inf)); // Compara que elementos son mayores que el pivote
+            if (i < j){
+                //swap
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            } else {
+                    flag = false;
             }
-            //Proceso para dividir mitades
-            temp = array[i];
-            array[i] = array[sup];
-            array[sup] = temp;
-
-            //--- RECURSION ---
-            QuickSort(array, inf, i-1);
-            QuickSort(array, i + 1, sup);
         }
+        //Proceso para dividir mitades
+        temp = array[i];
+        array[i] = array[sup];
+        array[sup] = temp;
+
+        //--- RECURSION ---
+        QuickSort(array, inf, i - 1);
+        QuickSort(array, i + 1, sup);
     }
     //*****************************************************************
 
@@ -136,14 +137,13 @@ public class Sorts<T> {
      * @param array
      */
     public void BubbleSort(T[] array){
-        for (int i = array.length; i < 1; i--) // Ciclo para determinar los elementos a los que se va a evaluar
-            for (int j = 0; j < i -1; j++) // Ciclo que indica el elemento actual que se comparara
-                if(comparator.Compare(array[j], array[j + 1]) > 0){ // Evalua si el elemento actual es mayor que el siguiente, de serlo, los intercambia de posicion
-                    //swap
-                    T temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
-                }
+        for (int i = 0; i < array.length - 1; i++) 	// Ciclo para determinar los elementos a los que se va a evaluar			
+			for (int j = i + 1; j < array.length; j++) 	// Ciclo que indica el elemento actual que se comparara
+				if (comparator.Compare(array[i], array[j]) > 0) { // Evalua si el elemento actual es mayor que el siguiente, de serlo, los intercambia de posicion
+					T temp = array[i];								
+					array[i] = array[j];							
+					array[j] = temp;									
+				}
     }
     //*****************************************************************
 
@@ -215,6 +215,7 @@ public class Sorts<T> {
 
         // Elementos restantes/sobrantes subgrupo 1
         while (LIndex < LArray.length) array[currentIndex++] = LArray[LIndex++];
+
 
         // Elementos restantes/sobrantes subgrupo 2
         while (RIndex < RArray.length) array[currentIndex++] = RArray[RIndex++];
