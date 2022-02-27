@@ -54,39 +54,7 @@ public class Sorts<T> {
      * @param array
      * @param size
      */
-    public void QuickSort(T[] array, int inf, int sup){
-       int i = inf - 1;
-	   int j = sup;
-	   boolean flag = true;
-	   T temp;
-	   
-	   
-	   if (inf >= sup) {
-		   return;
-	   }
-	   
-	   T elem_div = array[sup];
-	   
-	   
-	   while (flag) {
-		   while(comparator.Compare(array[++i], elem_div) < 0); //Move the index i until it finds an element bigger than elem_div
-		   while((comparator.Compare(array[--j], elem_div) > 0)  && (j > inf)); //Move the index j until it finds element smaller than elem_div
-		   
-		   if (i < j) {
-			   temp = array[i];
-			   array[i] = array[j];
-			   array[j] = temp;
-		   } else {
-			   flag = false;
-		   }
-	   }
-	   
-	   temp = array[i];
-	   array[i] = array[sup];
-	   array[sup] = temp;
-	   QuickSort(array, inf, i - 1);
-	   QuickSort(array, i + 1, sup);
-       /*
+    public void QuickSort(T[] array, int inf, int sup){     
         if (inf >= sup) 
             return;
         
@@ -117,7 +85,7 @@ public class Sorts<T> {
         //--- RECURSION ---
         QuickSort(array, inf, i - 1);
         QuickSort(array, i + 1, sup);
-        */
+        
     }
     //*****************************************************************
 
@@ -137,7 +105,8 @@ public class Sorts<T> {
         }
     }
     //*****************************************************************
-        /******************************************************************
+
+    /******************************************************************
     * counting Sort: metodo privado que hace la funcion de counting
     * @param array
     * @param lenght
@@ -183,11 +152,10 @@ public class Sorts<T> {
     /******************************************************************
      * Merge Sort: metodo que realiza un ordenamiento bajo el algoritmo de Merge
      * @param array
-     * @param size
+     * @param inicio
      * @param fin
      */
     public void MergeSort(T[] array, int inicio, int fin){
-        // A
         if (inicio < fin)
         {
             // Encontrar el punto medio
