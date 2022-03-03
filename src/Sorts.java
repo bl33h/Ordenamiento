@@ -106,6 +106,7 @@ public class Sorts<T> {
             countingSort(array,array.length,place);
         }
     }
+    // Algoritmo base: https://programmerclick.com/article/1791237870/
     //*****************************************************************
 
     /******************************************************************
@@ -134,7 +135,6 @@ public class Sorts<T> {
             arr[i] = output[i];
         }
     }
-    // Algoritmo base: https://programmerclick.com/article/1791237870/
     //*****************************************************************
 
     /******************************************************************
