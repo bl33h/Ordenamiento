@@ -47,6 +47,7 @@ public class Sorts<T> {
         }
 
     }
+    // Algoritmo base: https://www.geeksforgeeks.org/gnome-sort-a-stupid-one/
     //****************************************************************
 
     /*****************************************************************
@@ -87,6 +88,7 @@ public class Sorts<T> {
         QuickSort(array, i + 1, sup);
         
     }
+    // Algoritmo base: https://github.com/malonso-url/Ejemplo_Generics_Ordenamiento
     //*****************************************************************
 
     /******************************************************************
@@ -132,6 +134,7 @@ public class Sorts<T> {
             arr[i] = output[i];
         }
     }
+    // Algoritmo base: https://programmerclick.com/article/1791237870/
     //*****************************************************************
 
     /******************************************************************
@@ -147,6 +150,7 @@ public class Sorts<T> {
 					array[j] = temp;									
 				}
     }
+    // Algoritmo base: https://github.com/malonso-url/Ejemplo_Generics_Ordenamiento
     //*****************************************************************
 
     /******************************************************************
@@ -169,6 +173,7 @@ public class Sorts<T> {
         }
 
     }
+    // Algoritmo base: https://big-o.io/examples/merge-sort/java-generic/
     //*****************************************************************
 
     /******************************************************************
